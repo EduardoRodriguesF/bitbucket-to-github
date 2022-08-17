@@ -2,5 +2,5 @@
 
 source 'https://rubygems.org'
 
-gem 'bitbucket_rest_api'
 gem 'dotenv'
+gem 'httparty'
