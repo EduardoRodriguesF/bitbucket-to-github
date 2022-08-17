@@ -20,4 +20,4 @@ def list_repos
   puts response
 end
 
-list_repos
+list_repos if __FILE__ == $PROGRAM_NAME
