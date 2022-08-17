@@ -1,14 +1,23 @@
 # frozen_string_literal: true
 require 'dotenv'
-require 'bitbucket_rest_api'
+require 'httparty'
+require 'base64'
 
 Dotenv.load('.env.local')
 
-bitbucket = BitBucket.new do |config|
-  config.client_id = ENV['BITBUCKET_KEY']
-  config.client_secret = ENV['BITBUCKET_KEY']
+@user = "#{ENV['BITBUCKET_USERNAME']}:#{ENV['BITBUCKET_APP_PASSWORD']}"
+@basic_token = Base64.strict_encode64(@user)
+
+@headers = {
+  'Authorization': "Basic #{@basic_token}"
+}
+
+def list_repos
+  url = 'https://api.bitbucket.org/2.0/repositories/econverse-ag'
+
+  response = HTTParty.get(url, headers: @headers)
+
+  puts response
 end
 
-bitbucket.repos.list do |repo|
-  puts repo.name
-end
+list_repos
