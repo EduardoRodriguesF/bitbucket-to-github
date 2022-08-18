@@ -4,7 +4,7 @@ require 'httparty'
 require 'base64'
 require 'json'
 
-Dotenv.load('.env.local')
+Dotenv.load("#{__dir__}/.env.local")
 
 @user = "#{ENV['BITBUCKET_USERNAME']}:#{ENV['BITBUCKET_APP_PASSWORD']}"
 @basic_token = Base64.strict_encode64(@user)
