@@ -1,11 +1,11 @@
-clone_from_bitbucket(repo) {
-  git clone git@bitbucket.org:econverse-ag/$repo.git
+clone_from_bitbucket() {
+  git clone git@bitbucket.org:econverse-ag/$1.git
 }
 
-change_remote(repo) {
-  pushd $repo
+change_remote() {
+  pushd $1
     git remote remove origin
-    git remote add origin git@github.com:EconverseAG/$repo.git
+    git remote add origin git@github.com:EconverseAG/$1.git
     git push -u origin master
   popd
 }
