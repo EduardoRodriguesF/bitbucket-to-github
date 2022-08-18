@@ -19,6 +19,8 @@ def list_repos(url)
   repositories = response['values']
 
   repositories.each do |repo|
+    continue if File.readlines("#{__dir__}/.repoignore").grep(repo).any?
+
     puts repo['slug']
   end
 

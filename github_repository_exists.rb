@@ -20,6 +20,10 @@ response_body = JSON.parse(response.body)
 
 if response_body['message'] != 'Not Found'
   puts "repository #{@repository_name} already exists!"
+
+  File.open("#{__dir__}/.repoignore", 'a') do |file|
+    file.puts @repository_name
+  end
 else
   exit 1
 end
