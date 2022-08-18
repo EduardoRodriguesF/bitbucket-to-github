@@ -25,4 +25,4 @@ def list_repos(url)
   list_repos(response['next']) if response.key?('next')
 end
 
-list_repos('https://api.bitbucket.org/2.0/repositories/econverse-ag') if __FILE__ == $PROGRAM_NAME
+list_repos('https://api.bitbucket.org/2.0/repositories/econverse-ag?pagelen=100') if __FILE__ == $PROGRAM_NAME
