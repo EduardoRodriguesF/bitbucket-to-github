@@ -2,7 +2,7 @@ require 'httparty'
 require 'dotenv'
 require 'json'
 
-Dotenv.load('.env.local')
+Dotenv.load("#{__dir__}/.env.local")
 
 @repository_name = ARGV[0]
 
