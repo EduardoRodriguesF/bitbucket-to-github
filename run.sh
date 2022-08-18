@@ -3,12 +3,18 @@ source "./scripts/change_remote.sh"
 
 pwd="$(pwd)"
 
+export $(cat $pwd/.env.local | xargs)
+
 rm -Rf tmp
 mkdir tmp
 
 echo "Listing repositories..."
 touch tmp/repos.txt
 ruby list_repos.rb > tmp/repos.txt
+
+create_repository() {
+  curl -X POST -H "Accept: application/vnd.github+json" -H "Authorization: token $GITHUB_PERSONAL_TOKEN" https://api.github.com/orgs/EconverseAG/repos -d "{\"name\":\"$1\",\"private\":true}" 
+}
 
 pushd tmp
   while read p; do
@@ -18,6 +24,11 @@ pushd tmp
       continue
     fi
 
+
     clone_from_bitbucket $p
+
+    create_repository $p
+
+    change_remote $p
   done < repos.txt
 popd
