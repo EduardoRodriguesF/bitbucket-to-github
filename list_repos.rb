@@ -2,6 +2,7 @@
 require 'dotenv'
 require 'httparty'
 require 'base64'
+require 'json'
 
 Dotenv.load('.env.local')
 
@@ -12,12 +13,16 @@ Dotenv.load('.env.local')
   'Authorization': "Basic #{@basic_token}"
 }
 
-def list_repos
-  url = 'https://api.bitbucket.org/2.0/repositories/econverse-ag'
+def list_repos(url)
+  response = JSON.parse(HTTParty.get(url, headers: @headers).body)
 
-  response = HTTParty.get(url, headers: @headers)
+  repositories = response['values']
 
-  puts response
+  repositories.each do |repo|
+    puts repo['slug']
+  end
+
+  list_repos(response['next']) if response.key?('next')
 end
 
-list_repos if __FILE__ == $PROGRAM_NAME
+list_repos('https://api.bitbucket.org/2.0/repositories/econverse-ag') if __FILE__ == $PROGRAM_NAME
