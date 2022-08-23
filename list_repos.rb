@@ -8,6 +8,7 @@ Dotenv.load("#{__dir__}/.env.local")
 
 @user = "#{ENV['BITBUCKET_USERNAME']}:#{ENV['BITBUCKET_APP_PASSWORD']}"
 @basic_token = Base64.strict_encode64(@user)
+@workspace = ENV['BITBUCKET_WORKSPACE']
 
 @headers = {
   'Authorization': "Basic #{@basic_token}"
@@ -27,4 +28,4 @@ def list_repos(url)
   list_repos(response['next']) if response.key?('next')
 end
 
-list_repos('https://api.bitbucket.org/2.0/repositories/econverse-ag?pagelen=100') if __FILE__ == $PROGRAM_NAME
+list_repos("https://api.bitbucket.org/2.0/repositories/#{@workspace}?pagelen=100") if __FILE__ == $PROGRAM_NAME

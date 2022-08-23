@@ -5,6 +5,7 @@ require 'json'
 Dotenv.load("#{__dir__}/.env.local")
 
 @repository_name = ARGV[0]
+@organization = ENV['GITHUB_ORGANIZATION']
 
 @headers = {
   'Accept': 'application/vnd.github+json',
@@ -12,7 +13,7 @@ Dotenv.load("#{__dir__}/.env.local")
 }
 
 response = HTTParty.get(
-  "https://api.github.com/repos/EconverseAG/#{@repository_name}",
+  "https://api.github.com/repos/#{@organization}/#{@repository_name}",
   headers: @headers
 )
 

@@ -1,3 +1,3 @@
 clone_from_bitbucket() {
-  git clone git@bitbucket.org:econverse-ag/$1.git
+  git clone git@bitbucket.org:$1/$2.git
 }

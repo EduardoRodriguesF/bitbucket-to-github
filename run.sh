@@ -25,9 +25,9 @@ pushd tmp
     fi
 
 
-    clone_from_bitbucket $p
+    clone_from_bitbucket $BITBUCKET_WORKSPACE $p
 
-    create_repository $p
+    create_repository $GITHUB_ORGANIZATION $p
 
     change_remote $p
   done < repos.txt
