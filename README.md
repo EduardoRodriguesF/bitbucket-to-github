@@ -10,15 +10,15 @@ Transfer every repostory in a given Bitbucket workspace to a defined Github orga
 
 2. Copy `.env.example` into a new file named `.env.local` and fill the necessary values.
 
-2. Create a file named `.repoignore` in the root of the repository and list the repostories name that you would like to ignore.
+3. Create a file named `.repoignore` in the root of the repository and list the repostories name that you would like to ignore.
 This file will also be used to keep track of the repositories that have already been transferred.
 
-2. Assuming you already have Ruby and `bundle` in your machine, run the following command to install dependencies.
+4. Assuming you already have Ruby and `bundle` in your machine, run the following command to install dependencies.
 ```bash
 bundle
 ```
 
-3. Then, execute the bash script `run.sh` using this command:
+5. Then, execute the bash script `run.sh` using this command:
 ```bash
 sh run.sh
 ```
