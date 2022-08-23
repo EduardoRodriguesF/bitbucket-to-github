@@ -32,4 +32,4 @@ Thanks to the `.repoignore` file, all already migrated repositories will be skip
 
 ## Support
 
-If you have any trouble using this program, fill free to open an Issue here, then I'll be glad to help :)
+If you have any trouble using this program, fill free to [open an Issue](https://github.com/EduardoRodriguesF/bitbucket-to-github/issues/new), then I'll be glad to help :)
