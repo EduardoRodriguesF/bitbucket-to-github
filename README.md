@@ -1,6 +1,6 @@
 # Bitbucket to Github migration
 
-Created to migrate the `econverse-ag` workspace into @EconverseAG organization.
+Created to migrate the `econverse-ag` workspace into [@EconverseAG](https://github.com/EconverseAG) organization.
 
 Transfer every repostory in a given Bitbucket workspace to a defined Github organization.
 
