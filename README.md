@@ -29,3 +29,7 @@ This program uses the GitHub API to create a repository before pushing it to the
 If you start to see error messages in the command line, stop the execution with `Ctrl + C` and wait for about 20 minutes, then run the program again.
 
 Thanks to the `.repoignore` file, all already migrated repositories will be skipped to save you some time in that case.
+
+## Support
+
+If you have any trouble using this program, fill free to open an Issue here, then I'll be glad to help :)
