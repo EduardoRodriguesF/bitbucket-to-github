@@ -30,5 +30,7 @@ pushd tmp
     create_repository $GITHUB_ORGANIZATION $p
 
     change_remote $p
+
+    rm -Rf $p
   done < repos.txt
 popd
