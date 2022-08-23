@@ -32,6 +32,6 @@ If you start to see error messages in the command line, stop the execution with 
 
 Thanks to the `.repoignore` file, all already migrated repositories will be skipped to save you some time in that case.
 
-## Support
+## Need any help?
 
-If you have any trouble using this program, feel free to [open an Issue](https://github.com/EduardoRodriguesF/bitbucket-to-github/issues/new), then I'll be glad to help :)
+Feel free to [open an Issue](https://github.com/EduardoRodriguesF/bitbucket-to-github/issues/new), then I'll be glad to help :)
