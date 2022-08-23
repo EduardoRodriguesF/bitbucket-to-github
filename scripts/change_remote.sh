@@ -1,7 +1,10 @@
 change_remote() {
-  pushd $2
+  local organization=$1
+  local repository=$2
+
+  pushd $repository
     git remote remove origin
-    git remote add origin git@github.com:$1/$2.git
+    git remote add origin git@github.com:$organization/$repository.git
     git push -u origin master
   popd
 }
