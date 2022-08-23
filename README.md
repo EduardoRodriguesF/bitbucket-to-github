@@ -8,6 +8,8 @@ Transfer every repostory in a given Bitbucket workspace to a defined Github orga
 
 1. Download the repository either via git or its zipfile.
 
+2. Copy `.env.example` into a new file named `.env.local` and fill the necessary values.
+
 2. Create a file named `.repoignore` in the root of the repository and list the repostories name that you would like to ignore.
 This file will also be used to keep track of the repositories that have already been transferred.
 
